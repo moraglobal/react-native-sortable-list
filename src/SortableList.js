@@ -81,12 +81,12 @@ export default class SortableList extends Component {
       });
     });
 
-    if (this.props.renderHeader && !this.props.horizontal) {
+    if (this.props.renderHeader) {
       this._headerLayout = new Promise((resolve) => {
         this._resolveHeaderLayout = resolve;
       });
     }
-    if (this.props.renderFooter && !this.props.horizontal) {
+    if (this.props.renderFooter) {
       this._footerLayout = new Promise((resolve) => {
         this._resolveFooterLayout = resolve;
       });
@@ -280,7 +280,7 @@ export default class SortableList extends Component {
   }
 
   _renderHeader() {
-    if (!this.props.renderHeader || this.props.horizontal) {
+    if (!this.props.renderHeader) {
       return null;
     }
 
@@ -294,7 +294,7 @@ export default class SortableList extends Component {
   }
 
   _renderFooter() {
-    if (!this.props.renderFooter || this.props.horizontal) {
+    if (!this.props.renderFooter) {
       return null;
     }
 
